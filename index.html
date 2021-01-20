@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VVVVID</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Mukta:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="topo">
+
+        <input type="checkbox" id="menu_check" />
+        <label for="menu_check"><img src="imagens/icons/btn_menu.png" alt="MENU" class="btn_menu" /></label>
+
+        <div class="menu_topo">
+
+            <input id="item_menu_home" onclick="window.location.href = '#slide_destaques'" type="radio" name="item_menu"
+                checked />
+            <label for="item_menu_home">HOME</label>
+
+            <input id="item_menu_dorama" onclick="window.location.href = '#dorama'" type="radio" name="item_menu" />
+            <label for="item_menu_dorama">DORAMA</label>
+
+            <input id="item_menu_tvserie" onclick="window.location.href = '#tv_serie'" type="radio" name="item_menu" />
+            <label for="item_menu_tvserie">TV SERIES</label>
+
+            <input id="item_menu_anime" onclick="window.location.href = '#anime'" type="radio" name="item_menu" />
+            <label for="item_menu_anime">ANIME</label>
+
+            <input id="item_menu_mensagens" onclick="window.location.href = '#mensagens'" type="radio"
+                name="item_menu" />
+            <label for="item_menu_mensagens">MENSAGENS</label>
+
+        </div>
+
+        <div class="logo" onclick="window.location.href = 'index.html'">
+            <img src="imagens/icons/logo.png" width="65">
+        </div>
+
+        <div class="esp_pesquisa">
+            <input type="text" name="pesquisa" id="pesquisa" />
+            <input type="submit" value="" class="btn_pesquisar" />
+        </div>
+        <a href="#" class="icon_usuario"></a>
+
+        <div class="botoes_cores">
+
+            <input type="radio" id="fundo_branco" name="cor_fundo" checked />
+            <label for="fundo_branco">
+                <div onclick="document.body.style.background = 'white';"></div>
+            </label>
+
+            <input type="radio" id="fundo_cinza" name="cor_fundo" />
+            <label for="fundo_cinza">
+                <div onclick="document.body.style.background = 'rgb(92, 92, 92)';"></div>
+            </label>
+
+            <input type="radio" id="fundo_preto" name="cor_fundo" />
+            <label for="fundo_preto">
+                <div onclick="document.body.style.background = 'black';"></div>
+            </label>
+
+        </div>
+    </div>
+
+    <section id="slide_destaques">
+        <div class="controle_button">
+
+            <div id="detalhes"></div>
+
+            <img src="imagens/icons/btn_watch.png" class="btn_watch" />
+
+            <button onclick="navegarFoto(-1)" class="btn_ant"></button>
+            <button onclick="navegarFoto(1)" class="btn_prox"></button>
+
+        </div>
+        <div id="destaques"></div>
+        <script src="js/script.js"></script>
+    </section>
+
+    <section class="conteudo" id="dorama">
+        <span>DORAMAS</span>
+        <div class="lista">
+            <a href="#" class="capa dorama_0"></a>
+            <a href="#" class="capa dorama_1"></a>
+            <a href="#" class="capa dorama_2"></a>
+            <a href="#" class="capa dorama_3"></a>
+            <a href="#" class="capa dorama_4"></a>
+            <a href="#" class="capa dorama_5"></a>
+        </div>
+    </section>
+</body>
+<section class="conteudo" id="tv_serie">
+    <span>TV SERIES</span>
+    <div class="lista">
+        <a href="#" class="capa tv_serie_0"></a>
+        <a href="#" class="capa tv_serie_1"></a>
+        <a href="#" class="capa tv_serie_2"></a>
+        <a href="#" class="capa tv_serie_3"></a>
+        <a href="#" class="capa tv_serie_4"></a>
+        <a href="#" class="capa tv_serie_5"></a>
+    </div>
+</section>
+<section class="conteudo" id="anime">
+    <span>ANIME</span>
+    <div class="lista">
+        <a href="#" class="capa anime_0"></a>
+        <a href="#" class="capa anime_1"></a>
+        <a href="#" class="capa anime_2"></a>
+        <a href="#" class="capa anime_3"></a>
+        <a href="#" class="capa anime_4"></a>
+        <a href="#" class="capa anime_5"></a>
+    </div>
+</section>
+
+<section class="conteudo" id="mensagens">
+    <hr>
+    <span>DEIXE SEU RECADO!</span>
+    <center>
+        <div class="form_mensagem">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required />
+            </br>
+            <label for="mensagem">Mensagem:</label>
+            <input type="text" id="mensagem" name="mensagem" required />
+            </br>
+
+            <div id="lista_mensagens"></div>
+        </div>
+    </center>
+</section>
+<section class="conteudo" id="mensagens">
+    <hr>
+    <button class="btn_creditos" onclick="alert('DESENVOLVIMENTO DE SOFTWARE PARA WEB \n---------------------------- Integrantes ----------------------------\nAntonio Janderson Nascimento de Azevedo\nGéssyca Mayhara Sousa Moraes')">CREDITOS</button>
+</section>
+
+<script>
+    var nome = document.querySelector("#nome")
+    var mensagem = document.querySelector("#mensagem")
+
+    var btn_enviar = document.createElement("input")
+    btn_enviar.setAttribute("type", "submit")
+    btn_enviar.setAttribute("value", "Enviar")
+    btn_enviar.setAttribute("class", "btn_enviar")
+
+    var id_msg = 0
+    btn_enviar.onclick = function () {
+        if (nome.value != "" && mensagem.value != "") {
+            var esp_mensagem = document.createElement("div")
+            esp_mensagem.setAttribute("class", "id_msg_"+id_msg)
+
+            esp_mensagem.style.width = "100%"
+            esp_mensagem.style.minHeight = "25px"
+            esp_mensagem.style.textAlign = "left"
+            esp_mensagem.style.backgroundColor = "#fdc7d3cd"
+            esp_mensagem.style.padding = "5px";
+
+            var textoNome = document.createTextNode(nome.value + ": ")
+            esp_mensagem.appendChild(textoNome)
+
+            var textoMensagem = document.createTextNode(mensagem.value)
+            esp_mensagem.appendChild(textoMensagem)
+
+            var btn_excluir = document.createElement("input")
+            btn_excluir.setAttribute("type", "submit")
+            btn_excluir.setAttribute("value", "Excluir")
+            btn_excluir.setAttribute("class", id_msg)
+
+            btn_excluir.style.float = "right"
+            btn_excluir.style.backgroundColor = "#fc446d"
+            btn_excluir.style.borderRadius = "4px"
+            btn_excluir.style.border = "0px"
+            btn_excluir.style.padding = "1px"
+            btn_excluir.style.fontSize = "13px"
+            btn_excluir.style.color = "white"
+            btn_excluir.style.cursor = "pointer"
+            
+            esp_mensagem.appendChild(btn_excluir)
+
+            divP.appendChild(esp_mensagem)
+
+            mensagem.value = ''
+            nome.value = ''
+
+            id_msg++
+        } else {
+            alert("O campo 'Nome' e o campo 'Mensagem' devem estar preenchidos!")
+        }
+
+        btn_excluir.onclick = function () {
+            var mensagem_excluir = document.querySelector(".id_msg_"+btn_excluir.className)
+            mensagem_excluir.remove()
+        }
+
+    }
+
+    var divP = document.querySelector("#lista_mensagens")
+    divP.appendChild(btn_enviar)
+
+</script>
+
+</html>

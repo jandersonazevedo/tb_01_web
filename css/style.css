@@ -1,0 +1,404 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Mukta', sans-serif;
+}
+#topo{
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    height: 50px;
+    background-color: #fd3865;
+    text-align: center;
+    z-index: 1;
+}
+.menu_topo{
+    position: absolute;
+    float: left;
+    margin: 10px 0px 10px 25px;
+}
+.menu_topo label{
+    text-decoration: none;
+    color: #fd89a0;
+    font-weight:900;
+    margin: 0px 10px 0px 0px;
+    font-size: 15px;
+    transition: 0.4s;
+}.menu_topo input[type=radio]{
+    display: none;
+}
+.menu_topo label:hover{
+    color: #fdc7d3;
+    cursor: pointer;
+}
+#item_menu_home:checked ~ label[for=item_menu_home]{
+    color: #fff;
+}
+#item_menu_dorama:checked ~ label[for=item_menu_dorama]{
+    color: #fff;
+}
+#item_menu_tvserie:checked ~ label[for=item_menu_tvserie]{
+    color: #fff;
+}
+#item_menu_anime:checked ~ label[for=item_menu_anime]{
+    color: #fff;
+}#item_menu_mensagens:checked ~ label[for=item_menu_mensagens]{
+    color: #fff;
+}
+#menu_check{
+    display: none;
+}
+#menu_check:checked ~ label .btn_menu{
+    opacity: 1;
+}
+.btn_menu{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 25px;
+    top: 15px;
+    display: none;
+    opacity: 0.8;
+}.btn_menu:hover{
+    opacity: 1;
+}
+.logo{
+    position: absolute;
+    left: 47%;
+    cursor: pointer;
+}
+.logo span{
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+}
+.esp_pesquisa{
+    position: absolute;
+    background-color:  #fe9bb0;
+    margin: 15px 0px 0px 0px;
+    right: 60px;
+    opacity: 0.8;
+    width: 150px;
+    height: 20px;
+    padding: 1px;
+    border-radius: 20px;
+}#pesquisa{
+    position: absolute;
+    left: 0px;
+    width: 125px;
+    height: 90%;
+    border-radius: 20px;
+    border: 0px;
+    padding: 0px 5px 0px 5px;
+    background-color:  #fe9bb0;
+}.btn_pesquisar{
+    position: absolute;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    border: 0px;
+    cursor: pointer;
+    background: url("../imagens/icons/lupa.png") no-repeat;
+    background-size: 70%;
+    background-position: center;
+}
+.icon_usuario{
+    position: absolute;
+    background-color: #fe9bb0;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    right: 25px;
+    margin-top: 15px;
+    padding: 1px;
+    background-image: url("../imagens/icons/user.png");
+    background-size: 80%;
+    background-position:bottom;
+    background-repeat: no-repeat;
+}.botoes_cores{
+    position: absolute;
+    background-color: #fe9bb080;
+    width: 130px;
+    height: 35px;
+    right: 0px;
+    top: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}.botoes_cores input{
+    display: none;
+}.botoes_cores label div{
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    margin: 2px 5px 0px 5px;
+    display: inline-flex;
+    cursor: pointer;
+    border: 2px solid #fe9bb0;
+}.botoes_cores label[for="fundo_branco"] div{
+    background-color: white;
+}.botoes_cores label[for="fundo_cinza"] div{
+    background-color: rgb(92, 92, 92);
+}.botoes_cores label[for="fundo_preto"] div{
+    background-color: black;
+}#fundo_branco:checked ~ label[for="fundo_branco"] div{
+    border: 2px solid #fd3865;
+}#fundo_cinza:checked ~ label[for="fundo_cinza"] div{
+    border: 2px solid #fd3865;
+}#fundo_preto:checked ~ label[for="fundo_preto"] div{
+    border: 2px solid #fd3865;
+}
+#slide_destaques{
+    width: 100%;
+    height: 250px;
+    background-color: black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 50px 0px 0px 0px;
+    overflow: hidden;
+}#destaques{
+    width: 100%; 
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    box-shadow: inset 1px 1px 150px 50px #000;
+}.nome_destaque{
+    position: absolute;
+    color: white;
+    left: 140px;
+    font-size: 25px;
+    top: 25px;
+}.descricao_destaque{
+    position: absolute;
+    color: white;
+    top: 110px;
+    left: 100px;
+    font-size: 12px;
+    width: 300px;
+}.controle_button{
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    background:rgb(0, 0, 0, 0.5);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}.controle_button button{
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+    border: 0px;
+    background-size: 60%;
+}.btn_ant{
+    left: 10px;
+    background: url("../imagens/icons/seta-esquerda.png") no-repeat;
+    background-position: center;
+}.btn_prox{
+    right: 10px;
+    background: url("../imagens/icons/seta-direita.png") no-repeat;
+    background-position: center;
+}
+.conteudo{
+    padding-top: 70px;
+    margin-top: -45px;
+    margin-bottom: 10px;
+}
+.conteudo span{
+    color: #fc446d;
+    font-size: 20px;
+    font-weight: 1000;
+    margin-left: 20px;
+}#mensagens{
+    text-align: center;
+}.form_mensagem{
+    width: 320px;
+    color: #fc446d;
+    text-align: right;
+    position: static;
+}.form_mensagem input[type=text]{
+    background-color: #fe9bb0 ;
+    border-radius: 4px;
+    border: 0px;
+    padding: 5px;
+    margin-bottom:10px;
+}.btn_enviar{
+    background-color: #d33456;
+    border-radius: 4px;
+    border: 0px;
+    padding: 5px;
+    margin-bottom:10px;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+}.lista{
+    width: 100%;
+    height: 250px;
+    padding: 10px 0px 10px 0px;
+    max-width: 100%;
+    max-height: 250px;
+    display: flex;
+	flex-wrap: nowrap;
+    overflow-x:scroll;
+}.lista a{
+    color: rgb(44, 44, 44);
+}.capa{
+    position: relative;
+    display: inline-block;;
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 4px 1px 15px 0px;
+    margin: 0px 0px 0px 20px;
+    transition: 1s;
+    min-width: 180px;
+    height: 100%;   
+    background-position: center;
+    background-size: 100%;
+}.capa:hover{
+    background-size: 120%;
+    width: 180px;
+    box-shadow: inset 1px 1px 20px #000;
+}
+.dorama_0{
+    background: url("../imagens/doramas/0.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.dorama_1{
+    background: url("../imagens/doramas/1.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.dorama_2{
+    background: url("../imagens/doramas/2.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.dorama_3{
+    background: url("../imagens/doramas/3.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.dorama_4{
+    background: url("../imagens/doramas/4.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.dorama_5{
+    background: url("../imagens/doramas/5.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.anime_0{
+    background: url("../imagens/animes/0.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.anime_1{
+    background: url("../imagens/animes/1.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.anime_2{
+    background: url("../imagens/animes/2.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.anime_3{
+    background: url("../imagens/animes/3.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.anime_4{
+    background: url("../imagens/animes/4.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.anime_5{
+    background: url("../imagens/animes/5.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.tv_serie_0{
+    background: url("../imagens/tv_series/0.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.tv_serie_1{
+    background: url("../imagens/tv_series/1.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.tv_serie_2{
+    background: url("../imagens/tv_series/2.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.tv_serie_3{
+    background: url("../imagens/tv_series/3.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.tv_serie_4{
+    background: url("../imagens/tv_series/4.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}.tv_serie_5{
+    background: url("../imagens/tv_series/5.jpg") no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.controle_button figure{
+    position: absolute;
+    top: 60px;
+    text-align: center;
+}.icon_slider{
+    width: 20px;
+    height: 20px;
+    margin-bottom: -10px;
+}.icon_calendar{
+    left: 140px;
+}.icon_relogio{
+    left: 190px;
+}.icon_star{
+    left: 260px;
+}.btn_watch{
+    position: absolute;
+    left: 145px;
+    top: 190px;
+    cursor: pointer;
+}
+.controle_button figure figcaption{
+    color: white;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 800px) {
+    .menu_topo{
+        top: 40px;
+        background-color: #fd3865;
+        padding: 30px;
+        border-top: 1px solid #fe9bb0;
+        left: -180px;
+        transition: 0.5s;
+    }
+    .btn_menu{
+        display: block;
+    }
+    .logo{
+        left: 70px;
+    }
+    .menu_topo label{
+        display: block;
+        text-align: left;
+    }
+    #menu_check:checked ~ .menu_topo{
+        left: -30px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .descricao_destaque{
+        position: absolute;
+        color: white;
+        top: 110px;
+        left: 50px;
+        font-size: 12px;
+        width: 300px;
+    }
+}
+.btn_creditos{
+    background-color: #d33456;
+    border-radius: 4px;
+    border: 0px;
+    padding: 5px;
+    margin:30px 0px 30px 0px;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+}
